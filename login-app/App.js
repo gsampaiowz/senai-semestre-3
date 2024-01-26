@@ -8,12 +8,14 @@ import {
   View,
 } from "react-native";
 import lol from "./src/assets/img/logo.png";
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
 import {
   useFonts,
   Poppins_400Regular,
   Poppins_900Black,
 } from "@expo-google-fonts/poppins";
+import { useHover, useFocus, useActive } from "react-native-web-hooks";
+import { useRef } from "react";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,23 +27,22 @@ export const padding = (a, b, c, d) => ({
 });
 
 export default function App() {
-  let [fontsLoaded] = useFonts({
+  let [] = useFonts({
     Poppins_400Regular,
 
     Poppins_900Black,
   });
 
+  const ref = useRef(null);
+
+  const isHovered = useHover(ref);
+  const isFocused = useFocus(ref);
+  const isActive = useActive(ref);
+
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={lol} />
-      <Text
-        style={[
-          styles.title,
-          // { fontSize, paddingVertical, fontFamily: "Poppins_900Black" },
-        ]}
-      >
-        login
-      </Text>
+      <Text ref={ref} style={styles.title}>login</Text>
 
       <View style={styles.inputsContainer}>
         <View style={styles.input}>
@@ -59,8 +60,13 @@ export default function App() {
           />
         </View>
       </View>
-      <Pressable style={styles.btnLogin}>
-        <Text style={styles.btnText}>entrar</Text>
+      <Pressable
+        ref={ref}
+        style={[styles.btnLogin, isActive && { backgroundColor: "#D5B261" }]}
+      >
+        <Text style={[styles.btnText, isActive && { color: "white" }]}>
+          entrar
+        </Text>
       </Pressable>
       <StatusBar style="auto" />
     </View>
