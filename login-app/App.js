@@ -4,11 +4,18 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
+  Pressable,
   View,
 } from "react-native";
 import lol from "./src/assets/img/logo.png";
-// import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_900Black,
+} from "@expo-google-fonts/poppins";
+
+SplashScreen.preventAutoHideAsync();
 
 export const padding = (a, b, c, d) => ({
   paddingTop: a,
@@ -18,43 +25,43 @@ export const padding = (a, b, c, d) => ({
 });
 
 export default function App() {
-  // const [fontsLoaded, fontError] = useFonts({
-  //   "Poppins-Regular": require("./src/assets/fonts/Poppins-Regular.ttf"),
-  // });
+  let [fontsLoaded] = useFonts({
+    Poppins_400Regular,
 
-  // const onLayoutRootView = useCallback(async () => {
-  //   if (fontsLoaded || fontError) {
-  //     await SplashScreen.hideAsync();
-  //   }
-  // }, [fontsLoaded, fontError]);
-
-  // if (!fontsLoaded && !fontError) {
-  //   return null;
-  // }
+    Poppins_900Black,
+  });
 
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={lol} />
-      <Text style={styles.title}>login</Text>
+      <Text
+        style={[
+          styles.title,
+          // { fontSize, paddingVertical, fontFamily: "Poppins_900Black" },
+        ]}
+      >
+        login
+      </Text>
+
       <View style={styles.inputsContainer}>
         <View style={styles.input}>
           <Text style={styles.inputTitle}>Email</Text>
           <TextInput
             style={styles.inputArea}
-            defaultValue="Digite o seu email"
+            placeholder="Digite o seu email"
           />
         </View>
         <View style={styles.input}>
           <Text style={styles.inputTitle}>Senha</Text>
           <TextInput
             style={styles.inputArea}
-            defaultValue="Digite a sua senha"
+            placeholder="Digite a sua senha"
           />
         </View>
       </View>
-      <TouchableOpacity style={styles.btnLogin}>
+      <Pressable style={styles.btnLogin}>
         <Text style={styles.btnText}>entrar</Text>
-      </TouchableOpacity>
+      </Pressable>
       <StatusBar style="auto" />
     </View>
   );
@@ -63,19 +70,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // fontFamily: "Poppins-Regular",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
     gap: 25,
   },
   title: {
-    fontSize: 30,
+    fontSize: 24,
+    fontFamily: "Poppins_900Black",
     textTransform: "uppercase",
     fontWeight: "bold",
+    width: "80%",
+    textAlign: "center",
+    borderBottomWidth: 3,
   },
   image: {
-    width: 200,
+    width: 250,
     height: 80,
     aspectRatio: 16 / 9,
   },
@@ -84,21 +94,24 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   inputTitle: {
+    fontFamily: "Poppins_400Regular",
     fontSize: 16,
   },
   input: {
     gap: 8,
   },
   inputArea: {
+    fontFamily: "Poppins_400Regular",
     padding: 8,
     width: "100%",
+    color: "#999999",
     fontSize: 12,
     borderWidth: 1,
     borderRadius: 4,
   },
   btnLogin: {
     backgroundColor: "#fff",
-    border: "1px solid #D5B261",
+    border: "3px solid #D5B261",
     borderRadius: 4,
     fontSize: 16,
     fontWeight: "bold",
@@ -107,6 +120,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: "#D5B261",
+    fontFamily: "Poppins_900Black",
     fontSize: 16,
     fontWeight: "bold",
     textTransform: "uppercase",
