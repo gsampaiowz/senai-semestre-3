@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
+  Pressable,
   View,
 } from "react-native";
 import yuriAlberto from "./src/assets/img/yuri-alberto.webp";
@@ -18,15 +18,15 @@ export default function App() {
 
       <Text style={styles.text}>Não sei fazer gol🤙</Text>
 
-      <TextInput defaultValue="Yuri Aberto" style={styles.input} />
+      <TextInput placeholder="Yuri Alberto" style={styles.input} />
 
-      <TouchableOpacity
+      <Pressable
         style={styles.btn}
         onPress={() => Alert.alert("Secou!")}
         color="black"
       >
         <Text style={styles.btnText}>Secar</Text>
-      </TouchableOpacity>
+      </Pressable>
 
       <StatusBar style="auto" />
     </View>
