@@ -7,8 +7,9 @@ import {
 } from "@expo-google-fonts/roboto";
 import { ContainerApp } from "./style";
 import { Header } from "./src/components/Header";
+import { Home } from './src/screens/Home/index';
 
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   let [fontsLoaded, fontError] = useFonts({
@@ -24,7 +25,7 @@ export default function App() {
       <StatusBar backgroundColor={"transparent"} translucent />
       {/* Header */}
       <Header />
-
+      <Home />
       {/* HomeScreen */}
     </ContainerApp>
   );
