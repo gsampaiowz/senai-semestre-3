@@ -1,0 +1,20 @@
+{
+  "cep": [
+    {
+      "id": "12345678",
+      "cep": "12345678",
+      "logradouro": "Rua das Flores",
+      "bairro": "Centro",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    {
+      "id": "87654321",
+      "cep": "87654321",
+      "logradouro": "Rua das Pedras",
+      "bairro": "Centro",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    }
+  ]
+}
