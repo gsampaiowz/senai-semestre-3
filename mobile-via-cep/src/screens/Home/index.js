@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Input } from "../../components/Input";
 import { InputRow } from "../../components/Input/style";
 import { ContainerForm, ScrollForm } from "./style";
@@ -32,17 +32,14 @@ export function Home() {
         estado: response.data.estado_info.nome,
         uf: response.data.estado,
       });
-    } catch {
-    }
+    } catch {}
   };
-  useEffect(() => {
-    getAdress();
-  }, [inputs.cep]);
 
   return (
     <ScrollForm>
       <ContainerForm>
         <Input
+          onBlur={() => getAdress()}
           readOnly={false}
           value={inputs.cep}
           onChange={(text) => setInputs({ cep: text })}
@@ -59,7 +56,11 @@ export function Home() {
         <Input value={inputs.bairro} label={"Bairro:"} placeholder={"Bairro"} />
         <Input value={inputs.cidade} label={"Cidade:"} placeholder={"Cidade"} />
         <InputRow>
-          <Input value={inputs.estado} label={"Estado:"} placeholder={"Estado"} />
+          <Input
+            value={inputs.estado}
+            label={"Estado:"}
+            placeholder={"Estado"}
+          />
           <Input
             value={inputs.uf}
             width={60}

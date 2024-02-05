@@ -13,7 +13,7 @@ export const HeaderContainer = styled.View`
   shadow-radius: 25px;
 `;
 
-export const HeaderContent = styled.View`
+export const HeaderContent = styled.SafeAreaView`
   flex: 1;
   justify-content: center;
   align-items: center;

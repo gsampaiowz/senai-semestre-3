@@ -6,14 +6,16 @@ export function Input({
   width = "100%",
   maxLength,
   readOnly = true,
-  keyType = "default",
+  keyType = "none",
   onChange = () => {},
+  onBlur = () => {},
   value = "",
 }) {
   return (
     <InputContainer style={{ maxWidth: width }}>
       <InputLabel>{label}</InputLabel>
       <InputBox
+        onBlur={onBlur}
         inputMode={keyType}
         readOnly={readOnly}
         value={value}
