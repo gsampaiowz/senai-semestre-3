@@ -1,17 +1,24 @@
-import { StatusBar } from "expo-status-bar";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
 import {
   requestForegroundPermissionsAsync, // Solicita a permissão de localização
-  getCurrentPositionAsync, // Pega a posição atual do usuário
+  getCurrentPositionAsync,
+  watchPositionAsync,
+  LocationAccuracy, // Pega a posição atual do usuário
 } from "expo-location";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MapViewDirections from "react-native-maps-directions";
 import { mapskey } from "./utils/mapsKey";
 
 export default function App() {
+  const mapsReference = useRef(null);
+
   const [initialPosition, setInitialPosition] = useState(null);
+  const finalPosition = {
+    latitude: -23.686959,
+    longitude: -46.44311019,
+  };
 
   async function CapturarLocalizacao() {
     const { granted } = await requestForegroundPermissionsAsync();
@@ -20,23 +27,69 @@ export default function App() {
       const currentPosition = await getCurrentPositionAsync();
 
       await setInitialPosition(currentPosition);
+    }
+  }
 
-      console.log(initialPosition);
+  async function RecarregarVisualizacaoMapa() {
+    if (mapsReference.current) {
+      await mapsReference.current.fitToCoordinates(
+        [
+          {
+            latitude: initialPosition.coords.latitude,
+            longitude: initialPosition.coords.longitude,
+          },
+          {
+            latitude: finalPosition.latitude,
+            longitude: finalPosition.longitude,
+          },
+        ],
+        {
+          edgePadding: {
+            top: 60,
+            right: 60,
+            bottom: 60,
+            left: 60,
+          },
+          animated: true,
+        }
+      );
     }
   }
 
   useEffect(() => {
     CapturarLocalizacao();
-  }, [10000]);
+
+    // Capturar localização em tempo real
+    watchPositionAsync(
+      {
+        accuracy: LocationAccuracy.High,
+        timeInterval: 1000,
+        distanceInterval: 1,
+      },
+      async (response) => {
+        await setInitialPosition(response);
+
+        mapsReference.current.animateCamera({
+          pitch: 60,
+          center: response.coords,
+        });
+      }
+    );
+  }, [1000]);
+
+  useEffect(() => {
+    RecarregarVisualizacaoMapa();
+  }, [initialPosition]);
 
   return (
     <View style={styles.container}>
       {initialPosition != null ? (
         <MapView
+          ref={mapsReference}
           style={styles.map}
           initialRegion={{
-            latitude: initialPosition.coords.latitude,
-            longitude: initialPosition.coords.longitude,
+            latitude: finalPosition.latitude,
+            longitude: finalPosition.longitude,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
@@ -46,8 +99,8 @@ export default function App() {
           {/* Criando um marcador no mapa */}
           <Marker
             coordinate={{
-              latitude: initialPosition.coords.latitude,
-              longitude: initialPosition.coords.longitude,
+              latitude: finalPosition.latitude,
+              longitude: finalPosition.longitude,
             }}
             title="Senai Paulo Skaf"
             description="Melhor escola de tecnologia do Brasil"
@@ -57,13 +110,12 @@ export default function App() {
           <MapViewDirections
             origin={initialPosition.coords}
             destination={{
-              latitude: -23.686936,
-              longitude: -46.4457019,
+              latitude: finalPosition.latitude,
+              longitude: finalPosition.longitude,
             }}
             apikey={mapskey}
             strokeWidth={5}
             strokeColor="purple"
-
           />
         </MapView>
       ) : (
