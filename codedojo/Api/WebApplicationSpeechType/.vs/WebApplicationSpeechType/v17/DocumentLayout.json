@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|c:\\users\\42591939888\\desktop\\api\\webapplicationspeechtype\\webapplicationspeechtype\\controllers\\azurespeechservicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|solutionrelative:webapplicationspeechtype\\controllers\\azurespeechservicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|c:\\users\\42591939888\\desktop\\api\\webapplicationspeechtype\\webapplicationspeechtype\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|solutionrelative:webapplicationspeechtype\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|c:\\users\\42591939888\\desktop\\api\\webapplicationspeechtype\\webapplicationspeechtype\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|solutionrelative:webapplicationspeechtype\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|c:\\users\\42591939888\\desktop\\api\\webapplicationspeechtype\\webapplicationspeechtype\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{546FE2B9-B3BD-46DC-917B-35EF49F42929}|WebApplicationSpeechType\\WebApplicationSpeechType.csproj|solutionrelative:webapplicationspeechtype\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "WebApplicationSpeechType\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "WebApplicationSpeechType\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T20:11:32.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebApplicationSpeechType\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebApplicationSpeechType\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-18T20:05:15.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplicationSpeechType\\appsettings.json",
+              "ToolTip": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\appsettings.json",
+              "RelativeToolTip": "WebApplicationSpeechType\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-18T20:05:07.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AzureSpeechServiceController.cs",
+              "DocumentMoniker": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\Controllers\\AzureSpeechServiceController.cs",
+              "RelativeDocumentMoniker": "WebApplicationSpeechType\\Controllers\\AzureSpeechServiceController.cs",
+              "ToolTip": "C:\\Users\\42591939888\\Desktop\\Api\\WebApplicationSpeechType\\WebApplicationSpeechType\\Controllers\\AzureSpeechServiceController.cs",
+              "RelativeToolTip": "WebApplicationSpeechType\\Controllers\\AzureSpeechServiceController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAIwCMAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T19:26:44.252Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
